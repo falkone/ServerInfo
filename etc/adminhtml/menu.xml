@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Falkone::top_level" title="Falkone" module="Falkone_ServerInfo" sortOrder="9999"
+			 resource="Magento_Backend::content" parent="Magento_Backend::system"/>
+		<add id="Falkone_ServerInfo::falkone_serverinfo_phpinfo" title="PHP Info" module="Falkone_ServerInfo" sortOrder="9999"
+			 resource="Magento_Backend::content" parent="Falkone::top_level" action="falkone_serverinfo/phpinfo/index"/>
+	</menu>
+</config>

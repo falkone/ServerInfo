@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<update handle="styles"/>
+	<body>
+		<referenceContainer name="content">
+			<block name="server.php.info" class="Falkone\ServerInfo\Block\Adminhtml\PhpInfo\Index" template="Falkone_ServerInfo::php/info.phtml"/>
+			<uiComponent name="falkone_serverinfo_phpinfo_listing"/>
+		</referenceContainer>
+	</body>
+</page>

@@ -1,0 +1,30 @@
+<?php
+/**
+ * @var \Falkone\ServerInfo\Block\Adminhtml\PhpInfo\Index $block
+ * @var \Magento\Framework\Escaper                        $escaper
+ */
+?>
+<div class="entry-edit form-inline">
+    <fieldset class="admin__fieldset admin__fieldset-php-info" id="php-info-general">
+
+        <div class="admin__field field admin__field-small with-note">
+            <label class="label admin__field-label" for="php_general_info_version"
+                   data-ui-id="export-form-container-form-fieldset-element-file-export-file-label">
+                <span><?= $escaper->escapeHtml(__('Version')) ?></span>
+            </label>
+            <div class="admin__field-control control">
+                <div class="note admin__field-note"><?= $escaper->escapeHtml($block->getPhpVersion()) ?></div>
+            </div>
+        </div>
+        <div class="admin__field field admin__field-small with-note">
+            <label class="label admin__field-label" for="php_general_info_system"
+                   data-ui-id="export-form-container-form-fieldset-element-file-export-file-label">
+                <span><?= $escaper->escapeHtml(__('System')) ?></span>
+            </label>
+            <div class="admin__field-control control">
+                <div class="note admin__field-note"><?= $escaper->escapeHtml($block->getPhpServerInfo()) ?></div>
+            </div>
+        </div>
+
+    </fieldset>
+</div>
