@@ -1,51 +1,62 @@
-# Mage2 Module Falkone ServerInfo
+# Magento 2 Module - ServerInfo by Falkone
 
-    ``falkone/module-serverinfo``
-
- - [Main Functionalities](#markdown-header-main-functionalities)
- - [Installation](#markdown-header-installation)
- - [Configuration](#markdown-header-configuration)
- - [Specifications](#markdown-header-specifications)
- - [Attributes](#markdown-header-attributes)
-
+- [Main Functionalities](#markdown-header-main-functionalities)
+- [Installation](#markdown-header-installation)
+- [Configuration](#markdown-header-configuration)
+- [Usage](#markdown-header-usage)
 
 ## Main Functionalities
-Simple Module to show PHP Info in Admin Panel
+
+This Module shows the current PHP settings (like `phpinfo()`) in the Magento Backend as UI Grid in Magento Style.
+
+Important: It shows the PHP Settings from the Backend - if the Frontend uses a different Server oder configuration it may vary.
 
 ## Installation
-\* = in production please use the `--keep-generated` option
 
-### Type 1: Zip file
+To install the Magento 2 ServerInfo extension please add our repository to your Magento _composer.json_.
 
- - Unzip the zip file in `app/code/Falkone`
- - Enable the module by running `php bin/magento module:enable Falkone_ServerInfo`
- - Apply database updates by running `php bin/magento setup:upgrade`\*
- - Flush the cache by running `php bin/magento cache:flush`
+    {
+        "repositories": [
+            {
+                "url": "https://github.com/falkone/ServerInfo",
+                "type": "vcs"
+            }
+        ]
+    }
 
-### Type 2: Composer
+After you added our repository you need to require our module by running the command: 
 
- - Make the module available in a composer repository for example:
-    - private repository `repo.magento.com`
-    - public repository `packagist.org`
-    - public github repository as vcs
- - Add the composer repository to the configuration by running `composer config repositories.repo.magento.com composer https://repo.magento.com/`
- - Install the module composer by running `composer require falkone/module-serverinfo`
- - enable the module by running `php bin/magento module:enable Falkone_ServerInfo`
- - apply database updates by running `php bin/magento setup:upgrade`\*
- - Flush the cache by running `php bin/magento cache:flush`
+```
+composer require falkone/module-serverinfo
+```
 
+### Enable module in Magento
+
+To enable our module via Magento 2 CLI go to your Magento root and run:
+
+    bin/magento module:enable --clear-static-content Falkone_ServerInfo
+
+The Magento 2 ServerInfo module should now be installed and ready to use.
+
+Depending on your Magento 2 installation setup, you may want to run following additional commands:
+
+```
+bin/magento setup:di:compile
+bin/magento setup:static-content:deploy
+```
 
 ## Configuration
 
+This module requires and provides no configuration. 
 
 
+## Usage
 
-## Specifications
+Login in the Magento Backend and goto `System` > `PHP Info`  
 
+![preview.png](%20_images%2Fpreview.png)
 
+## Issues
 
-
-## Attributes
-
-
+Please use GitHub build-in Issue tracker at: https://github.com/falkone/ServerInfo/issues
 
